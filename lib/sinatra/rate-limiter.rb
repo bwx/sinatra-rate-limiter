@@ -41,7 +41,7 @@ module Sinatra
 
         if (limits.size < 1)
           raise ArgumentError, 'No explicit or default limits values provided.'
-        elsif (limits.map{|a| a.class}.select{|a| a != Fixnum}.count > 0)
+        elsif (limits.map{|a| a.class}.select{|a| a != Integer}.count > 0)
           raise ArgumentError, 'Non-Fixnum parameters supplied. All parameters must be Fixnum except the first which may be a String.'
         elsif ((limits.map{|a| a.class}.size % 2) != 0)
           raise ArgumentError, 'Wrong number of Fixnum parameters supplied.'
