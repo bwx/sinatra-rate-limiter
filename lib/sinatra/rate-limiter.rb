@@ -125,9 +125,9 @@ module Sinatra
         limit_no = 0 if @limits.length > 1
         @limits.each do |limit|
           limit_no = limit_no + 1 if limit_no
-          headers << [header_prefix + (limit_no ? "-#{limit_no}" : '') + '-Limit',     limit[:requests]]
-          headers << [header_prefix + (limit_no ? "-#{limit_no}" : '') + '-Remaining', limit_remaining(limit)]
-          headers << [header_prefix + (limit_no ? "-#{limit_no}" : '') + '-Reset',     limit_reset(limit)]
+          headers << [header_prefix + (limit_no ? "-#{limit_no}" : '') + '-Limit',     limit[:requests].to_s]
+          headers << [header_prefix + (limit_no ? "-#{limit_no}" : '') + '-Remaining', limit_remaining(limit).to_s]
+          headers << [header_prefix + (limit_no ? "-#{limit_no}" : '') + '-Reset',     limit_reset(limit).to_s]
         end
 
         return headers
