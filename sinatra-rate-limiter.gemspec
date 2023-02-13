@@ -10,6 +10,6 @@ Gem::Specification.new do |s|
 
   s.files       = Dir['README.md', 'LICENSE', 'lib/**/*']
 
-  s.add_dependency('sinatra', '~> 1.3')
-  s.add_dependency('redis',   '~> 3.0')
+  s.add_dependency('sinatra', '~> 3.0')
+  s.add_dependency('redis',   '~> 5.0')
 end
